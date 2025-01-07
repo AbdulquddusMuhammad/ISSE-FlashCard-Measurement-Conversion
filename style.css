@@ -1,0 +1,276 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  /* outline: 1px solid red; */
+}
+
+html,
+body {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  height: 100vh;
+  width: 100%;
+  box-sizing: border-box;
+  background: #f4f4f4;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: sans-seriff;
+  display: flex;
+  flex-direction: column;
+}
+
+.flashcard-container {
+  background: linear-gradient(90deg, #e3f2fd, #e3f2fd, #ffff, #e3f2fd, #e3f2fd);
+  /* background-color: #e3f2fd; */
+  color: black;
+  background-size: 300%;
+  background-position: 154px 0;
+  /* position: absolute; */
+  top: 1rem;
+  left: 10vw;
+  /* width: 80vw; */
+  width: 100%;
+  /* height: auto; */
+  border-radius: 12px;
+  padding: 1rem;
+  transition: 1s;
+  border: 2px solid #90caf9;
+  /* border-top: none;
+  border-left: none; */
+  /* margin-bottom: 10rem; */
+  padding-bottom: 5rem;
+}
+
+.front,
+.back {
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  width: 100%;
+}
+
+.back {
+  display: none;
+  transform: rotateY(180deg);
+}
+
+.question-content {
+  font-size: 2rem;
+}
+
+.question {
+  display: flex;
+  gap: 1rem;
+}
+
+.question,
+.answer {
+  /* font-weight: bold; */
+  font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
+  font-size: 2rem;
+}
+
+.answer-content,
+.solution-content,
+.question-content {
+  font-size: 2rem !important;
+}
+
+.front span:nth-child(2),
+.back span:nth-child(2),
+.back span:nth-child(4) {
+  margin: 4rem 0 1rem 1rem;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.to-back {
+  transition: 1s;
+  transform: rotateY(180deg);
+}
+
+.flash-card-no-nav {
+  margin-top: 2rem;
+}
+
+.overall-con {
+  width: 80vw;
+  height: auto;
+  /* min-height: 80vh; */
+  position: relative;
+  margin-top: 1rem;
+  padding: 1.5rem;
+  background-color: #ffff;
+}
+
+.overall-con button {
+  padding: 1rem;
+  border-radius: 8px;
+  outline: none;
+  border: none;
+  white-space: nowrap;
+  /* border-bottom: 3px solid black;
+  border-right: 2px solid black; */
+  width: 150px;
+  transition: 1s;
+  position: fixed;
+  background-color: transparent;
+}
+
+.overall-con button i {
+  font-size: 8rem;
+  opacity: 0.5;
+}
+
+.overall-con .previous_flashcard {
+  top: 50vh;
+  left: 0;
+}
+
+.overall-con .next_flashcard {
+  top: 50vh;
+  right: 0;
+}
+
+.clicked {
+  background-color: orange !important;
+  color: white !important;
+  transition: 1s !important;
+}
+
+.flashcard-reflect {
+  background: linear-gradient(90deg, #e3f2fd, #e3f2fd, #ffff, #e3f2fd, #e3f2fd);
+  background-size: 300%;
+  background-position: 154px 0;
+  animation: reflect 0.5s linear;
+}
+
+@keyframes reflect {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.overall-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+/* @media (min-width: 450px) {
+.overall-container {
+  scale: 2;
+}
+} */
+
+/* .flashcard-reflect {
+  background: linear-gradient(90deg, orange, orange, #ffff, orange, orange);
+  background-size: 300%;
+  background-position: 154px 0;
+  animation: reflect 0.5s linear;
+} */
+
+@keyframes reflect {
+  0% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.overall-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  background-color: #6200ea;
+  height: 4rem;
+  padding: 0.2rem;
+  gap: 1rem;
+  border-top-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  /* border-radius: 1rem; */
+}
+
+.footer button,
+div {
+  width: 8rem;
+  border-radius: 0.9rem;
+}
+
+.previous_flashcard {
+  background-color: #9e9e9e;
+  color: white;
+  font-weight: 700;
+  border: transparent;
+}
+
+.next_flashcard {
+  background-color: #3700b3;
+  color: white;
+  font-weight: 799;
+  border: transparent;
+}
+
+.footer div {
+  background-color: white;
+  color: black;
+  display: flex;
+  /* justify-content: center; */
+  align-items: center;
+  position: relative;
+}
+
+.footer div i {
+  padding-left: 1rem;
+}
+
+.footer div input {
+  padding-left: 3rem;
+}
+
+.go-to-question {
+  background-color: transparent;
+  border: none;
+  width: 50px;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  outline: none;
+}
+
+@media (max-width: 400px) {
+  .overall-con button {
+    width: 50px;
+  }
+
+  .overall-con button i {
+    font-size: 3rem;
+  }
+  .answer-content,
+  .solution-content,
+  .question-content {
+    font-size: 1.2rem !important;
+  }
+}
